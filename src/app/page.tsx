@@ -29,7 +29,7 @@ export default function Home() {
         </div>
         <div>
           <textarea onChange={handleChange}  placeholder="Type here"
-            autoComplete="off" autoFocus={true} className="border-solid border-spacing-1" wrap="off" spellCheck={false} style={{ resize: "none" }} rows={2} cols={20}
+            autoComplete="off" autoFocus={true} className="border-solid border-2 " wrap="off" spellCheck={false} style={{ resize: "none" }} rows={1} cols={15}
           ></textarea>
         </div>
         <div>
