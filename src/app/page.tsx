@@ -1,23 +1,40 @@
 "use client";
 import React, { useState } from "react";
 export default function Home() {
-  const [text, setText] = useState<string>("");
 
 
-  let ArrayText = text.split("");
+  const [text, setText] = useState("");
+  let original: string[] = [];
+
+  const createSpan = (text: string) => {
+    const span = <span className="bg-red-300">{text}</span>;
+
+    return span;
+  }
 
   async function fetchData() {
     const response = await fetch("https://dummyjson.com/quotes/random");
     const data = await response.json();
+    //paragraph = data[0].quote;
     setText(data.quote);
-    ArrayText = text.split("");
+    original = data.quote.split("");
+
+    // call createSpan function
+
   }
+
+
+
 
 
   function handleChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
 
+    setText(createSpan(event.target.value));
   }
 
+  window.onload = () => {
+    fetchData();
+  }
 
   return (
     <div className="w-screen h-screen">
@@ -29,11 +46,9 @@ export default function Home() {
         </div>
         <div>
           <textarea onChange={handleChange}  placeholder="Type here"
-            autoComplete="off" autoFocus={true} className="border-solid border-2 " wrap="off" spellCheck={false} style={{ resize: "none" }} rows={1} cols={15}
+            autoComplete="off" autoFocus={true} className="border-solid border-2 nowrap opacity-0  " wrap="off" spellCheck={false} style={{ resize: "none" }} rows={1} cols={15}
+
           ></textarea>
-        </div>
-        <div>
-          <button onClick={fetchData}>Fetch Data</button>
         </div>
       </main>
     </div>
