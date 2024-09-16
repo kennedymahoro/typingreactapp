@@ -28,7 +28,7 @@ export default function Home() {
 
 
   function handleChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
-
+    // creates span objects
     setText(createSpan(event.target.value));
   }
 
