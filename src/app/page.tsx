@@ -5,7 +5,7 @@ export default function Home() {
 
   const [text, setText] = useState("");
   let original: string[] = [];
-  let current: string[] = [];
+  let current;
 
   const createSpan = (text: string) => {
     const span = <span className="bg-red-300">{text}</span>;
