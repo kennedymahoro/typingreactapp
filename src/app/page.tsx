@@ -5,6 +5,7 @@ export default function Home() {
 
   const [text, setText] = useState("");
   let original: string[] = [];
+  // not sure the issue is here
   let current = [];
 
   const createSpan = (text: string) => {
