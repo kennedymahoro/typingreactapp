@@ -50,7 +50,7 @@ export default function Home() {
           </p>
         </div>
         <div>
-          <textarea onChange={handleChange}  placeholder="Type here"
+          <textarea onChange={handleChange}  placeholder={text}
             autoComplete="off" autoFocus={true} className="border-solid border-2 nowrap opacity-0  " wrap="off" spellCheck={false} style={{ resize: "none" }} rows={1} cols={15}
 
           ></textarea>
